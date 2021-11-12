@@ -21,7 +21,7 @@ const ListItem: ListItemT = ({item}) => {
     }
     const type = item.type
     const modifier = item.id<10?'00':item.id<100?'0':''
-    const imgUrl = `./../../../../assets/thumbnails/${modifier}${item.id||0}.png`
+    const imgUrl = `./../../../assets/thumbnails/${modifier}${item.id||0}.png`
     return (
         <div className="item_wrapper" key={item.id}>
             <h3>{name}</h3>
