@@ -8,6 +8,7 @@ import pokedex from '../../store/pokedex.json';
 import types from '../../store/types.json'
 import ListItem from "../listItem";
 import FiltersPanel from "../filterPanel";
+import {filterBy} from '../../store/services'
 
 const initState: Array<{ [key: string]: any }> = [{}]
 
@@ -27,31 +28,50 @@ const ListContainer = () => {
     /**
      * list of types
      */
-    const [typesList, setTypesList] = useState(types.map(el=>el.english))
+    const [typesList, setTypesList] = useState(types.map(el => el.english))
     /**
      * selected type
      */
     const [typeFilter, setTypeFilter] = useState('')
 
     /**
-     * filter data mathods
+     * filter data methods and states
      * @param event
      */
-    const onFielterBysearch = (event: any) => {
-        const {value} = event.target
-    }
+    const [filteredLIst, setFilteredList] = useState(initState)
+    const [search, setSearch] = useState('')
+
+    useEffect(() => {
+        setFilteredList(state)
+    }, [state])
+
+    useEffect(() => {
+        setFilteredList(filterBy(state, 'name', 'type', search, typeFilter))
+    }, [typeFilter, search])
+
+
     const filterByType = (event: any) => {
         const {value} = event.target
+        setTypeFilter(value)
+    }
 
+
+    const onFielterBysearch = (event: any) => {
+        const {value} = event.target
+        setSearch(value || '')
     }
     const onResetFilters = () => {
+        setSearch('')
+        setTypeFilter('')
+
     }
+
     return <>
         <FiltersPanel onResetFilter={onResetFilters} listTypes={typesList || []} typeSelected={typeFilter}
                       onSearch={onFielterBysearch}
                       onSelectType={filterByType}/>
         <div className="list_container_wrapper">
-            {_.map(state, (el: any, i) => {
+            {_.map(filteredLIst, (el: any, i) => {
                 return (
                     <ListItem i={i} item={el} key={i}/>
                 )
