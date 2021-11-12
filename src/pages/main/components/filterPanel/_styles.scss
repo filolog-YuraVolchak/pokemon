@@ -16,6 +16,13 @@
     justify-content: center;
     grid-area: filter;
 
+    @media screen and(max-width: 678px) {
+      grid-template-rows: auto;
+      grid-template-columns: 5% 40% 30% 20% 5%;
+      grid-template-areas: ". search select select . "
+      ". select select reset . ";
+    }
+
     .type_select {
       height: 30px;
       border-radius: 2px;
