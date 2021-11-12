@@ -7,9 +7,9 @@ import Header from '../../../commonComponents/header'
 export const MainPageInterface = () => {
     return (<>
         <div className="page_wrapper">
-            {/*<Header/>*/}
+            <Header/>
             <ListContainer/>
-            {/*<Footer/>*/}
+            <Footer/>
         </div>
     </>)
 

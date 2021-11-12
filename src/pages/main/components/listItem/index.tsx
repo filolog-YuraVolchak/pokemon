@@ -14,7 +14,7 @@ const ListItem:ListItemT  = ({item,i})=>{
 
     return <>
         <div className="item_wrapper" key={i}>
-            <h3>{item?.name}</h3>
+            <h3>{item?.name?.english}</h3>
             <div className="item_img">
                 <img src={'url'} alt="'photo"/>
             </div>

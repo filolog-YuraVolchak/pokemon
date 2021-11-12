@@ -1,0 +1,42 @@
+@import '../../../../assets/scss/index';
+
+.panel {
+  &_wrapper {
+    height: 50px;
+    background-color: $header-color;
+    padding: $p1;
+
+    align-items: center;
+    display: grid;
+    grid-template-columns: 10% 40% 20% 10% 10% 10%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    ".  search select reset . . ";
+    grid-gap: 1rem;
+    justify-content: center;
+    grid-area: filter;
+
+    .type_select {
+      height: 30px;
+      border-radius: 2px;
+
+      grid-area: select;
+    }
+
+    .search_filed {
+      height: 30px;
+      padding-left: 15px;
+      border-radius: 2px;
+      grid-area: search;
+    }
+
+
+    button {
+      height: 30px;
+      max-width: 100px;
+      grid-area: reset;
+
+    }
+  }
+
+}
