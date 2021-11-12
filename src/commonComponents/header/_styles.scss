@@ -1,0 +1,13 @@
+@import '../../assets/scss/index';
+.header{
+  &_wrapper{
+    height: 50px;
+    background-color: $header-color;
+    color: white;
+    padding: $p1;
+    align-items: center;
+    display: grid;
+    grid-area: header;
+
+  }
+}

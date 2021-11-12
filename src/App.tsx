@@ -5,6 +5,8 @@ import {
     Switch,
     Redirect,
 } from 'react-router-dom';
+import {MainPageInterface} from './pages/main/container'
+
 import './styles.scss';
 const App: React.FC = () => {
     return (
@@ -15,9 +17,13 @@ const App: React.FC = () => {
                         <Switch>
                             <Route path="/" >
                                 {/*Main page interface*/}
+                                <MainPageInterface />
+
                             </Route>
                             <Route path="/main" >
                                 {/*Main page interface*/}
+                                <MainPageInterface />
+
                             </Route>
                             {/* redirect to main*/}
                             <Redirect to={'/main'}/>

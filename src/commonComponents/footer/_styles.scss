@@ -1,0 +1,11 @@
+@import '../../assets/scss/index';
+.footer{
+  &_wrapper{
+    height: 50px;
+    background-color: $header-color;
+    color: white;
+    padding: $p1;
+    grid-area: footer;
+
+  }
+}
