@@ -1,16 +1,15 @@
 import React, {useEffect, useState} from 'react';
 
 import './_styles.scss'
-import {Footer} from "../../../commonComponents/footer";
-import {Header} from "../../../commonComponents/header/index"
+import ListContainer from '../components/listContainer'
+import Footer from "../../../commonComponents/footer";
+import Header from '../../../commonComponents/header'
 export const MainPageInterface = () => {
     return (<>
         <div className="page_wrapper">
-            <Header/>
-            <div className="main">
-                <h3>hello list component</h3>
-            </div>
-            <Footer/>
+            {/*<Header/>*/}
+            <ListContainer/>
+            {/*<Footer/>*/}
         </div>
     </>)
 

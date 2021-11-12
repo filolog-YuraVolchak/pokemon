@@ -1,0 +1,15 @@
+.list{
+  &_container{
+    &_wrapper{
+      height: calc(100vh - 200px);
+      overflow: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-gap: 1rem;
+      grid-area: main;
+
+    }
+  }
+
+
+}
